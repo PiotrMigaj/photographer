@@ -1,0 +1,22 @@
+<!-- src/main/resources/templates/addPhoto.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Photographer | Add Photo</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div th:replace="~{common/navbar :: navbar}"></div>
+
+<div class="container">
+    <h1>Add Photo</h1>
+    <form th:action="@{/addPhoto}" method="post">
+        <div class="form-group">
+            <label for="photoUrl">Photo URL</label>
+            <input type="text" class="form-control" id="photoUrl" name="photoUrl" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Photo</button>
+    </form>
+</div>
+</body>
+</html>

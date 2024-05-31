@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Photographer | Login</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div th:replace="~{common/navbar :: navbar}"></div>
+
+<div class="container">
+    <h1>Login</h1>
+    <!-- Display error message if it exists -->
+    <div th:if="${param.error}" class="alert alert-danger" role="alert">
+        Invalid username or password. Please try again.
+    </div>
+    <form th:action="@{/login}" method="post">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</div>
+</body>
+</html>

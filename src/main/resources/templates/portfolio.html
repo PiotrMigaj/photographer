@@ -1,0 +1,21 @@
+<!-- src/main/resources/templates/portfolio.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Photographer | Portfolio</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div th:replace="~{common/navbar :: navbar}"></div>
+
+<div class="container gallery">
+    <img src="https://picsum.photos/400/400?random=1" class="img-thumbnail" />
+    <img src="https://picsum.photos/400/400?random=2" class="img-thumbnail" />
+    <img src="https://picsum.photos/400/400?random=3" class="img-thumbnail" />
+
+    <div th:each="photoUrl : ${photoUrls}">
+        <img th:src="${photoUrl}" class="img-thumbnail" />
+    </div>
+</div>
+</body>
+</html>
